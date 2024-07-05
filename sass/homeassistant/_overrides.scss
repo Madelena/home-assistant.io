@@ -28,6 +28,20 @@
   }
 }
 
+
+// Wider page
+
+.grid-wrapper {
+  margin: auto;
+  max-width: $site-width;
+  padding: 0 48px;
+
+  @media only screen and (max-width: $lap-end) {
+    padding: 0 24px;
+  }
+
+}
+
 // Rounded background for numbered lists
 article> {
   ol {
