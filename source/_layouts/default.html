@@ -13,11 +13,11 @@
     <div class="grid-wrapper">
       <div class="grid grid-center">
         {% if page.is_post and page.sidebar == false %}
-        <div class="grid__item four-fifths lap-one-whole palm-one-whole">
+        <div class="grid__item four-fifths desk-wide-two-thirds palm-one-whole">
         {% elsif page.is_homepage or page.layout == "landingpage" %}
         <div class="grid__item one-whole">
         {% else %}
-        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        <div class="grid__item two-thirds desk-wide-one-half lap-one-whole palm-one-whole">
         {% endif %}
 
           {% if page.is_homepage or page.layout == "landingpage"  %}
@@ -28,7 +28,7 @@
         </div>
 
         {% unless page.sidebar == false or page.layout == "landingpage"  %}
-        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+        <aside id="sidebar" class="grid__item one-third desk-wide-one-quarter lap-one-whole palm-one-whole">
           {% include site/sidebar.html %}
         </aside>
         {% endunless %}
