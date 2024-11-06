@@ -75,8 +75,8 @@ Enjoy the (beta) release!
 
 <!--more-->
 
-- [Sections dashboard now generally available](#sections-dashboard-now-generally-available)
-  - [Convert your old dashboards to sections dashboards](#convert-your-old-dashboards-to-sections-dashboards)
+- [Sections dashboard no longer experimental!](#sections-dashboard-no-longer-experimental)
+  - [Convert your old dashboards to sections view layout](#convert-your-old-dashboards-to-sections-view-layout)
   - [Precise sizing mode](#precise-sizing-mode)
 - [Low latency cameras using WebRTC](#low-latency-cameras-using-webrtc)
 - [Integrations](#integrations)
@@ -91,19 +91,35 @@ Enjoy the (beta) release!
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
 
-## Sections dashboard leaves experimental
+## Sections dashboard no longer experimental!
 
-Exciting news on the dashboarding front; the new sections dashboard is leaving experimental status and is now marked as stable! This is after several months of adding new capabilities such as [resizing cards](/blog/2024/07/03/release-20247/), [wider sections](/blog/2024/09/04/release-20249/), [new badges](/blog/2024/08/07/release-20248/) and most recently, adding [the heading card](/blog/2024/10/02/release-202410/).
+This release marks a big milestone in our pursuit to making dashboards easier to customize and use for everyone, aka [Project Grace](https://www.home-assistant.io/blog/2024/03/04/dashboard-chapter-1/)! The sections view layout, together with its drag-and-drop 🐲 capabilities and responsive design, is now out of experimental phase, and ready for primetime! This means that, as of this release, when you create a new dashboard, you will get our awesome feature-rich and easy-to-use dashboard editing experience.
 
-This means that, as of this release, when you create a new dashboard, you will get our awesome drag-and-drop experience\! Sections is by far the most feature-rich and easy-to-use dashboard type, and is ready for prime time.
+Over the past few months, we worked hard to iterate and listen to your feedback to ensure that our new dashboard is easy to customize for both beginners and advanced users alike. We had added new capabilities such as [resizing cards](/blog/2024/07/03/release-20247/), [visibility options](/blog/2024/06/05/release-20246/), [wider sections](/blog/2024/09/04/release-20249/), [new badges](/blog/2024/08/07/release-20248/) and most recently, adding [the new heading card](/blog/2024/10/02/release-202410/).
 
-### Convert your old dashboards to sections dashboards
+To finish up this journey, we are adding two more features in this release:
 
-This release also includes a new way to convert masonry type to the new sections type dashboard. If you change the view type to sections you get a button to convert the view. All the cards of the old view are then placed in an imported cards section, and you can drag them into sections as you please. This is non-destructive, i.e. your old dashboard view is kept and a new dashboard is created, giving an excellent way for masonry veterans to try out sections while keeping all the hard work they have put into customizing their cards.
+### Convert your old dashboards to sections view layout
+
+![Screenshots showing the conversion of a view in masonry into sections](/images/blog/2024-11/dashboard-conversion.png)
+
+This release includes a way to convert the old masonry view layout to the new sections view layout for your individual dashboard views. When you change the view type to sections, you get a button to convert the view. All the cards of the old view are then copied and placed in an imported cards section in the new view, and you can then easily drag-and-drop them into right sections.
+
+Please note that cards placed within the imported cards section are not visible to users until they are moved to a section above the fold. This ensures that cards do not get accidentally shown in the wrong sections while you are still working on the dashboard.
+
+![Screenshot of the imported cards section](/images/blog/2024-11/imported-cards.png)
+
+If you are not ready for the new layout yet, no worries! Your old dashboard view is kept when a new dashboard is created, giving an excellent way for masonry view veterans to try out sections while keeping all the hard work they have put into customizing their cards.
+
+Alternatively, you can also move each card one-by-one from another view. All moved cards will also be temporarily placed in the imported cards section.
 
 ### Precise sizing mode
 
-You now have even more control over the size of cards. In the layout options of a card you can now enable “Precise mode”, this will give you 3 times more options for the width and height of cards! Precise mode is applied on a card-by-card level, giving more increments in card sizing, and is perfect for advanced dashboards.
+![Examples of cards using precise mode](/images/blog/2024-11/precise-mode-example.png)
+
+If you love tinkering your dashboards and fine-tuning the card sizes with more precision, you now have even more control over the size of cards. In the layout options of a card you can now enable “Precise mode”, which will give you 3 times more options for the width of cards!
+
+Precise mode is applied on a card-by-card level. While a normal section is divided into 4 columns, precise modes gives you 12 columns, which allows you to align 2, 3, 4, or 6 buttons side-by-side.
 
 ## Low latency cameras using WebRTC
 
@@ -212,6 +228,8 @@ noteworthy changes this release:
   re-use and sharing of common blueprints for sets of templated entities.
   This feature is an advanced feature and is only available using manual YAML
   configuration.
+- [@MindFreeze] and [@matthiasdebaat] had improved the network settings UI. You 
+  can now see the Netmask of the network interfaces easier.
 
 [(limited) template]: /docs/configuration/templating/#limited-templates
 [@mib1185]: https://github.com/mib1185
