@@ -77,7 +77,7 @@ Enjoy the (beta) release!
 
 - [Sections dashboard no longer experimental!](#sections-dashboard-no-longer-experimental)
   - [Convert your old dashboards to sections view layout](#convert-your-old-dashboards-to-sections-view-layout)
-  - [Precise sizing mode](#precise-sizing-mode)
+  - [Precise mode for card sizes](#precise-mode-for-card-sizes)
 - [Low latency cameras using WebRTC](#low-latency-cameras-using-webrtc)
 - [Integrations](#integrations)
   - [New integrations](#new-integrations)
@@ -101,21 +101,21 @@ To finish up this journey, we are adding two more features in this release:
 
 ### Convert your old dashboards to sections view layout
 
-![Screenshots showing the conversion of a view in masonry into sections](/images/blog/2024-11/dashboard-conversion.png)
+<p class='img no-shadow'><img class="no-shadow" alt="Screenshots showing the conversion of a view in masonry into sections" src="/images/blog/2024-11/dashboard-conversion.png"/>Screenshots showing the conversion of a view in masonry into sections</p>
 
 This release includes a way to convert the old masonry view layout to the new sections view layout for your individual dashboard views. When you change the view type to sections, you get a button to convert the view. All the cards of the old view are then copied and placed in an imported cards section in the new view, and you can then easily drag-and-drop them into right sections.
 
 Please note that cards placed within the imported cards section are not visible to users until they are moved to a section above the fold. This ensures that cards do not get accidentally shown in the wrong sections while you are still working on the dashboard.
 
-![Screenshot of the imported cards section](/images/blog/2024-11/imported-cards.png)
+<p class='img no-shadow'><img class="no-shadow" alt="Screenshot of the imported cards section" src="/images/blog/2024-11/imported-cards.png"/>Screenshot of the imported cards section</p>
 
 If you are not ready for the new layout yet, no worries! Your old dashboard view is kept when a new dashboard is created, giving an excellent way for masonry view veterans to try out sections while keeping all the hard work they have put into customizing their cards.
 
 Alternatively, you can also move each card one-by-one from another view. All moved cards will also be temporarily placed in the imported cards section.
 
-### Precise sizing mode
+### Precise mode for card sizes
 
-![Examples of cards using precise mode](/images/blog/2024-11/precise-mode-example.png)
+<p class='img no-shadow'><img class="no-shadow" alt="Examples of cards using precise mode" src="/images/blog/2024-11/precise-mode-example.png" style="width: 60%;"/>Examples of cards using precise mode</p>
 
 If you love tinkering your dashboards and fine-tuning the card sizes with more precision, you now have even more control over the size of cards. In the layout options of a card you can now enable “Precise mode”, which will give you 3 times more options for the width of cards!
 
