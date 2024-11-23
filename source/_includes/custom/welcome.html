@@ -14,11 +14,13 @@
 {%- endif %}
 {%- endfor -%}
 
-<p class='hero-buttons'>
+<div class='hero-buttons'>
   <a href='/installation/' class="primary">Get started <iconify-icon inline icon='mdi:arrow-right'></iconify-icon></a>
-  <a href='https://demo.home-assistant.io' target='_blank'>View live demos</a>
-  <a href='/integrations/'>Browse {{ tot | minus: 1 | divided_by: 100 | round | times: 100 }}+ integrations</a>
-</p>
+  <div>
+    <a href='https://demo.home-assistant.io' target='_blank'>View live demos</a>
+    <a href='/integrations/'>Browse {{ tot | minus: 1 | divided_by: 100 | round | times: 100 }}+ integrations</a>
+  </div>
+</div>
 
 <div class="hero-socialproof">
   <a href="https://github.blog/news-insights/octoverse/octoverse-2024/#the-state-of-open-source" target="_blank" class="">

@@ -947,6 +947,16 @@ a.material-card:hover {
     #Raspberry_Pi .badge {
       color: $primary-color;
     }
+    
+    @media only screen and (max-width: $palm-end) {
+      .getting-started-device {
+        padding-bottom: 64px;
+      }
+
+      #HA_Yellow, #Raspberry_Pi {
+        padding-top: 0;
+      }
+    }
   }
 
 

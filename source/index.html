@@ -12,7 +12,7 @@ feedback: false
   <div class="grid">
 
     <!--  Left sidebar begins -->
-    <div class="grid__item one-third lap-one-third palm-one-whole">
+    <div class="grid__item one-third lap-one-half palm-one-whole">
 
       <div class="recent-posts material-card text">
         <h1>{% icon "mdi:newspaper-variant-multiple" %} Recent Blog Posts</h1>
@@ -106,7 +106,7 @@ feedback: false
     <!-- Left sidebar ends -->
 
     <!-- Center content begins -->
-    <div class="grid__item one-third lap-one-third palm-one-whole">
+    <div class="grid__item one-third lap-one-half palm-one-whole">
 
       {% assign pages_by_date = site.pages | sort: "date" | reverse %} {% for
         page in pages_by_date %} {% if page.layout == "landingpage" and
@@ -135,7 +135,7 @@ feedback: false
     <!-- Center sidebar ends -->
 
     <!-- Right content begins -->
-    <div class="grid__item one-third lap-one-third palm-one-whole">
+    <div class="grid__item one-third lap-one-half palm-one-whole">
 
       <!-- State of the Open Home -->
       <a
