@@ -7,7 +7,7 @@
   background: linear-gradient(0deg, hsl(195, 89%, 52%) 0%, hsla(195, 89%, 52%, 0.8) 100%);
   padding-bottom: 0;
   margin-top: -88px;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
   padding-top: 88px;
   overflow: hidden;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -24,14 +24,20 @@
   }
 
   h1 {
-    font-size: 6em;
-    line-height: .8;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, hsl(174.86, 100%, 75%) 100%);
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -2.56px;
+    background: linear-gradient(125deg, #FFF 29.3%, #80FFF4 89.99%);
     background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
     .line2 {
       line-height: 1.25;
+      margin-top: -1.75rem;
+      display: block;
     }
   }
 
@@ -40,30 +46,92 @@
       color: $grayLighter;
       font-size: .65em;
     }
-    .lead {
-      font-size: 1.25rem;
+    &.lead {
+      font-size: 1.5rem !important;
       margin-bottom: 24px;
+      line-height: 2.25rem !important;
     }
   }
 
   .hero-buttons a {
-    font-family: $heading-font;
     font-size: 1.1rem;
     color: white;
-    text-transform: uppercase;
     white-space: nowrap;
     display: inline-block;
     font-weight: 600;
-    padding: 8px 24px 8px 0;
-    margin: 0 4px 0 0;
+    padding: 8px 0 8px 0;
+    margin: 0 4px 0 24px;
     border-radius: 32px;
 
     &.primary {
+      font-family: $heading-font;
       background-color: $link-color;
-      font-size: 2rem;
+      text-transform: uppercase;
+      font-size: 1.5rem;
       font-weight: 700;
-      padding: 8px 20px 8px 28px;
-      margin-bottom: 16px;
+      padding: 8px 16px 8px 24px;
+      margin: 0 0 16px 0;
+    }
+  }
+  
+  .hero-socialproof {
+    display: flex;
+    padding-top: 16px;
+    align-items: center;
+    gap: 32px;
+
+    a {
+      opacity: 0.75;
+      transition: .5s opacity;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    
+  }
+
+  .hero-github-top-project {
+    display: flex;
+    padding: 12px 16px 12px 12px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    border: 1px solid #F2F4F9;
+    width: 330px;
+
+    p {
+      color: #FFF;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.25rem;
+      margin: 0;
+
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .hero-socialproof-asseenon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    p {
+      margin: 8px 0 0 0;
+      align-self: stretch;
+      font-size: .875rem;
+      font-weight: 700;
+      opacity: .75;
+    }
+
+    .logos {
+      display: flex;
+      align-items: center;
+      gap: 32px;
     }
   }
 

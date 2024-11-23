@@ -517,7 +517,7 @@ a.material-card:hover {
     .img {
       background-color: $grayLighter;
       width: calc(100%-8px);
-      aspect-ratio: 120/63;
+      // aspect-ratio: 120/63;
       background-size: cover;
       background-position: center;
       border-radius: 8px;
@@ -659,14 +659,16 @@ a.material-card:hover {
   }
 
   .highlight-blog-post {
-    font-size: 2rem;
+    font-family: $heading-font;
+    font-size: 1.5rem;
+    font-weight: 700;
     line-height: 1.15;
-    padding: 15px;
+    padding: 24px;
     display: block;
     text-decoration: none;
     color: white;
     transition: background-color 0.5s;
-    background-color: #038fc7;
+    background-color: $primary-color;
 
     &.large {
       font-size: 2.25rem;
@@ -726,15 +728,16 @@ a.material-card:hover {
 
   .picture-promo {
     display: block;
-    padding-top: 30%;
+    padding-top: 33%;
     background-size: cover;
     background-position: center;
     text-decoration: none;
     border: none;
 
     .caption {
-      padding: 8px 12px 12px;
-      background-color: rgba(0, 0, 0, 0.54);
+      padding: 48px 24px 24px 24px;
+      background: rgb(0,0,0);
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
       color: white;
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
@@ -743,16 +746,19 @@ a.material-card:hover {
       align-items: center;
 
       .title {
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 1.2em;
+        font-family: $heading-font;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: normal;
       }
 
       .subtitle {
-        margin-top: 4px;
-        line-height: 1.4em;
-        font-size: 12px;
+        margin-top: 8px;
+        line-height: 1.5rem;
+        font-size: 1rem;
         font-weight: initial;
+        text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.33);
+        opacity: .8;
       }
 
       svg {
@@ -913,17 +919,6 @@ dt:hover a.title-link {
   }
 }
 
-.hero-buttons {
-  margin-bottom: 0;
-}
-
-.hero-buttons a {
-  margin: 0 30px 10px 0;
-
-  &:last-child {
-    margin: 0;
-  }
-}
 
 // Article formatting
 
