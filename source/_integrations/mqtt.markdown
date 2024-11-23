@@ -51,6 +51,20 @@ MQTT (aka MQ Telemetry Transport) is a machine-to-machine or "Internet of Things
 
 {% include integrations/config_flow.md %}
 
+### Removing the MQTT integration
+
+The MQTT integration and its entities can be removed by following these steps:
+
+1. Navigate to **Settings** > **Devices & Services**
+2. Find the MQTT integration and click on it
+3. Click the delete button to remove the MQTT config entry
+
+Note: This action does not remove the [MQTT broker](#setting-up-a-broker) or its data. If you want to completely remove MQTT:
+
+1. Check your `configuration.yaml` and other YAML files for MQTT-related configurations and remove them
+2. Review your automations and scripts for any MQTT dependencies
+3. Consider backing up your configuration before making these changes
+
 <a name="configuration-via-mqtt-discovery"></a>
 {% details "Configuration of MQTT components via MQTT discovery" %}
 
@@ -1307,6 +1321,7 @@ The following software has built-in support for MQTT discovery:
 - [ArduinoHA](https://github.com/dawidchyrzynski/arduino-home-assistant)
 - [Arilux AL-LC0X LED controllers](https://github.com/smrtnt/Arilux_AL-LC0X)
 - [ble2mqtt](https://github.com/devbis/ble2mqtt)
+- [diematic_server](https://github.com/IgnacioHR/diematic_server)
 - [digitalstrom-mqtt](https://github.com/gaetancollaud/digitalstrom-mqtt)
 - [ebusd](https://github.com/john30/ebusd)
 - [ecowitt2mqtt](https://github.com/bachya/ecowitt2mqtt)
@@ -1318,6 +1333,7 @@ The following software has built-in support for MQTT discovery:
 - [IOTLink](https://iotlink.gitlab.io) (starting with 2.0.0)
 - [MiFlora MQTT Daemon](https://github.com/ThomDietrich/miflora-mqtt-daemon)
 - [MyElectricalData](https://github.com/MyElectricalData/myelectricaldata_import#english)
+- [MqDockerUp](https://github.com/MichelFR/MqDockerUp)
 - [Nuki Hub](https://github.com/technyon/nuki_hub)
 - [Nuki Smart Lock 3.0 Pro](https://support.nuki.io/hc/articles/12947926779409-MQTT-support), [more info](https://developer.nuki.io/t/mqtt-api-specification-v1-3/17626)
 - [OpenMQTTGateway](https://github.com/1technophile/OpenMQTTGateway)

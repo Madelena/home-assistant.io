@@ -322,7 +322,7 @@ List of lights that are on with a brightness of 255:
 {% raw %}
 
 ```text
-{{ ['light.kitchen', 'light.dinig_room'] | select('is_state', 'on') | select('is_state_attr', 'brightness', 255) | list }}
+{{ ['light.kitchen', 'light.dining_room'] | select('is_state', 'on') | select('is_state_attr', 'brightness', 255) | list }}
 ```
 
 {% endraw %}
