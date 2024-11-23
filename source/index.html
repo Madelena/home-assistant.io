@@ -25,6 +25,71 @@ feedback: false
         {% endfor %}
       </div>
 
+      <a href="https://www.openhomefoundation.org/blog/announcing-the-open-home-foundation/" class="material-card highlight-blog-post">
+        <div>
+          <p class="lead">We are a non-profit and can't be sold or acquired.</p>
+          <p>Home Assistant is a project by the Open Home Foundation.</p>
+        </div>
+        <iconify-icon icon="mdi:chevron-right"></iconify-icon>
+      </a>
+
+      <div class="material-card highlight-detail-post">
+        <div class="caption">
+          <p>Supercharge your home with</p>
+          <p><strong>Home Assistant Cloud</strong></p>
+          <p class="small">by Nabu Casa</p>
+        </div>
+
+        <div class="content">
+
+          <div class="detail-feature">
+            <iconify-icon icon="mdi:earth"></iconify-icon>
+            <div>
+              <p class="lead">Remote access</p>
+              <p>Secure remote access to your system while supporting the development of Home Assistant.</p>
+            </div>
+          </div>
+
+          <div class="detail-feature">
+            <iconify-icon icon="mdi:microphone-message"></iconify-icon>
+            <div>
+              <p class="lead">Better voice assistant experience</p>
+              <p>Speed up and take the load off your system by running your text-to-speech and speech-to-text in our private and secure cloud.</p>
+            </div>
+          </div>
+
+          <div class="detail-feature">
+            <div>
+              {% icon "simple-icons:amazonalexa" %}
+              {% icon "simple-icons:googleassistant" %}
+            </div>
+            <div>
+              <p class="lead">Amazon Alexa and Google Assistant</p>
+              <p>Control all your Home Assistant devices via any Alexa-enabled or Google Assistant-enabled device.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="links">
+          <a
+            href="https://nabucasa.com/"
+            aria-label="Learn more about Home Assistant Cloud"
+            >Learn more</a>
+          <a
+            href="https://account.nabucasa.com/signup/"
+            >Try 1 month for free</a>
+        </div>
+      </div>
+
+      <a
+        class="material-card highlight-blog-post"
+        href="/blog/2016/01/19/perfect-home-automation/"
+      >
+        <p class="lead">Read our founder's vision for the perfect home automation</p>
+        <iconify-icon icon="mdi:arrow-right-thick"></iconify-icon>
+      </a>
+
       <div class="join-community material-card text">
         <h1>{% icon "mdi:people-group-outline" %} Join The Community</h1>
 
@@ -37,91 +102,92 @@ feedback: false
         </div>
       </div>
 
-      <a
-        class="material-card highlight-blog-post"
-        href="/blog/2016/01/19/perfect-home-automation/"
-      >
-        <p class="lead">Read our founder's vision for the perfect home automation</p>
-        <iconify-icon icon="mdi:arrow-right-thick"></iconify-icon>
-      </a>
-
-      <div class="material-card text">
-        <h1>{% icon "simple-icons:amazonalexa" %} Alexa, turn on the lights</h1>
-        Use Alexa to control Home Assistant.
-
-        <div class="links">
-          <a
-            href="/cloud/"
-            aria-label="Learn more about use Alexa to control Home Assistant"
-            >LEARN MORE</a
-          >
-        </div>
-      </div>
-      <div class="material-card text">
-        <h1>{% icon "simple-icons:googleassistant" %} Ok Google, turn off the AC</h1>
-        Use Google Assistant to control Home Assistant.
-
-        <div class="links">
-          <a
-            href="/cloud/"
-            aria-label="Learn more about use Google Assistant to control Home Assistant"
-            >LEARN MORE</a
-          >
-        </div>
-      </div>
-
-      <a href="https://www.openhomefoundation.org/blog/announcing-the-open-home-foundation/" class="material-card highlight-blog-post">
-        <div>
-          <p class="lead">We are a non-profit and can't be sold or acquired.</p>
-          <p>Home Assistant is a project by the Open Home Foundation.</p>
-        </div>
-        <iconify-icon icon="mdi:chevron-right"></iconify-icon>
-      </a>
-
-      <a
-        class="material-card picture-promo"
-        href="/blog/2019/08/06/home-assistant-cast/"
-        style="background-image: url(/images/frontpage/cast-frontpage.png)"
-      >
-        <div class="caption">
-          <div>
-            <div class="title">
-              Take over all the screens
-            </div>
-            <div class="subtitle">
-              Home Assistant Cast makes every TV a display.
-            </div>
-          </div>
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
-            />
-          </svg>
-        </div>
-      </a>
     </div>
     <!-- Left sidebar ends -->
 
+    <!-- Center content begins -->
+    <div class="grid__item one-third lap-one-third palm-one-whole">
+
+      {% assign pages_by_date = site.pages | sort: "date" | reverse %} {% for
+        page in pages_by_date %} {% if page.layout == "landingpage" and
+        page.frontpage != false %}
+        <a
+          class="material-card picture-promo"
+          href="{{page.url}}"
+          style="
+              background-image: url({{page.frontpage_image | default:page.og_image}});
+              background-size: cover;
+              background-color: #41bdf5;
+            "
+        >
+          <div class="caption">
+            <div>
+              <div class="title">
+                {{page.title}}
+              </div>
+              <div class="subtitle">{{page.description}}</div>
+            </div>
+          </div>
+        </a>
+      {% endif %} {% endfor %}
+
+    </div>
+    <!-- Center sidebar ends -->
+
     <!-- Right content begins -->
     <div class="grid__item one-third lap-one-third palm-one-whole">
+
       <!-- State of the Open Home -->
       <a
         href="/blog/2024/04/24/state-of-the-open-home-2024/"
         class="material-card picture-promo"
         style="
-          background-image: url(/images/frontpage/state-of-the-open-home-2024.png);
+          background-image: url(/images/frontpage/feature-sotoh2024.jpg);
           background-size: cover;
           padding-top: 55%;
         "
-      ></a>
+      >
+        <div class="caption">
+          <div>
+            <div class="title">
+              State of the Open Home 2024
+            </div>
+            <div class="subtitle">
+              Learn about our progress so far and also the roadmap for this year.
+            </div>
+          </div>
+        </div>
+      </a>
 
+      <!-- GitHub Top project! -->
       <a
+        href="https://newsletter.openhomefoundation.org/we-are-number-one/" target="_blank"
         class="material-card picture-promo"
+        style="
+          background-image: url(/images/frontpage/feature-githubnnumberone.jpg);
+          background-size: cover;
+          padding-top: 55%;
+        "
+      >
+        <div class="caption">
+          <div>
+            <div class="title">
+              We are #1 on GitHub!
+            </div>
+            <div class="subtitle">
+              The Home Assistant project is the open source project with the most contributors! Come celebrate with us.
+            </div>
+          </div>
+        </div>
+      </a>
+      
+      <a
+        class="material-card picture-promo picture-top"
         href="/voice_control/"
         style="
-          background-image: url(/images/frontpage/assist_wake_word.png);
+          background-image: url(/images/frontpage/feature-voice.jpg);
           background-size: cover;
-          padding-top: 35%;
+          padding-bottom: 35%;
         "
       >
         <div class="caption">
@@ -132,58 +198,6 @@ feedback: false
             <div class="subtitle">
               Our private, insanely fast, voice assistant running on affordable
               hardware. Now supporting wake words.
-            </div>
-          </div>
-        </div>
-      </a>
-
-      {% assign pages_by_date = site.pages | sort: "date" | reverse %} {% for
-      page in pages_by_date %} {% if page.layout == "landingpage" and
-      page.frontpage != false %}
-      <a
-        class="material-card picture-promo"
-        href="{{page.url}}"
-        style="
-            background-image: url({{page.frontpage_image | default:page.og_image}});
-            background-size: cover;
-            background-color: #41bdf5;
-          "
-      >
-        <div class="caption">
-          <div>
-            <div class="title">
-              {{page.title}}
-            </div>
-            <div class="subtitle">{{page.description}}</div>
-          </div>
-        </div>
-      </a>
-      {% endif %} {% endfor %}
-      <!-- Tutorial: setup private voice assistant over phone -->
-      <a
-        href="/voice_control/worlds-most-private-voice-assistant/"
-        target="_blank"
-        class="material-card picture-promo"
-        style="
-          background-image: url(/images/frontpage/promo-private-voice-assistant.png);
-          background-size: cover;
-          padding-top: 45%;
-        "
-      ></a>
-      <a
-        class="material-card picture-promo"
-        href="/blog/2020/09/15/home-assistant-tags/"
-        style="
-          background-image: url(/images/blog/2020-09-15-home-assistant-tags/tag-reader.jpg);
-        "
-      >
-        <div class="caption">
-          <div>
-            <div class="title">
-              Home Assistant Tags
-            </div>
-            <div class="subtitle">
-              Use NFC to bring music to your life or automate the mundane.
             </div>
           </div>
         </div>
@@ -205,6 +219,7 @@ feedback: false
           </div>
         </div>
       </a>
+
     </div>
     <!-- Right content ends -->
 
