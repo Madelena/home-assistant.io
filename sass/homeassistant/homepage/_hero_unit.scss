@@ -216,6 +216,11 @@
 
 @media only screen and (max-width: 760px) {
   .hero {
+    text-align: center;
+
+    .hero-socialproof, .hero-buttons {
+      align-items: center;
+    } 
 
     min-height: 940px;
     .flex {
@@ -227,7 +232,9 @@
     }
 
     #HAdemoScreenshot {
-      display: block;
+      display: inline-block;
+      text-align: center;
+      padding-top: 48px;
     }
   }
 }
