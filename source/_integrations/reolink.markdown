@@ -460,6 +460,11 @@ This will also decouple the chime from the doorbell in the Reolink app/client. T
 1. One way to show the camera in the dashboard is by using the picture glance card.
 2. For example, you can place arrow buttons on the card to [control the camera](/dashboards/picture-glance/#creating-a-card-to-control-the-camera).
 
+## Known limitations
+
+- 2-way audio or Text-to-speech is not available in the Reolink Home Assistant integration.
+- The 4K camera streams are H265 encoded, support for playing H265 encoding in browsers (Chrome/Firefox/Edge/Safari etc.) is still very limited, therefore the 4K clear stream may not play in all browsers or on all phones in the Home Assistant Companion app. By default only the lower resolution Fluent camera entity is enabled in Home Assistant. This Fluent stream is H264 encoded and will play on any browser or phone.
+
 ## Troubleshooting
 
 ### Can’t setup the integration
