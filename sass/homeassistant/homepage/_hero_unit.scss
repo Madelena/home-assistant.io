@@ -83,7 +83,7 @@
   
   .hero-socialproof {
     display: flex;
-    padding-top: 16px;
+    padding-top: 48px;
     align-items: center;
     gap: 32px;
 
@@ -156,11 +156,12 @@
     border-radius: 48px;
     border: 12px double white;
     box-shadow: 24px 64px 64px hsla(220, 100%, 25%, .5);
-    // animation-name: box-shadow-color;
-    // animation-duration: 3s;
+    // animation-name: floaty-demo;
+    // animation-duration: 4s;
     // animation-iteration-count: infinite;
     // animation-direction: alternate;
-    transform: rotateY(342deg) skewY(4deg);
+    // animation-timing-function: linear;
+    transform: rotateY(346deg) skewY(3deg);
 
     @media only screen and (max-height: 840px) {
       border-bottom: 0;
@@ -170,6 +171,15 @@
 
     }
 
+  }
+}
+
+@keyframes floaty-demo {
+  from {
+    transform: translateY(-25px) rotateY(346deg) skewY(3deg);
+  }
+  to {
+    transform: translateY(0) rotateY(346deg) skewY(3deg);
   }
 }
 

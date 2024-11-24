@@ -12,6 +12,21 @@
         <a id="HAdemoScreenshot" href='https://demo.home-assistant.io/' target='_blank'>
           <img src="/images/frontpage/hero_screenshot.png" alt="Home Assistant screenshot">
         </a>
+
+        <script>
+          document.addEventListener('mousemove', (event) => {
+            const phone = document.querySelector('#HAdemo');
+            const { innerWidth } = window;
+            const mouseX = event.clientX;
+
+            // Calculate rotation angle (-30 to 30 degrees based on cursor position)
+            const rotation = ((mouseX / innerWidth) - 0.8) * 30;
+            const skew = -((mouseX / innerWidth) - 0.8) * 4;
+
+            // Apply rotation
+            phone.style.transform = `rotateY(${rotation}deg) skewY(${skew}deg)`;
+          });
+        </script>
       </div>
     </div>
   </div>
