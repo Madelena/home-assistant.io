@@ -899,6 +899,13 @@ a.material-card:hover {
       text-transform: uppercase;
     }
 
+    .getting-started-grid {
+      display: flex;
+      padding: 48px 0 48px 24px;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
     .getting-started-device {
       .content {
         display: flex;
@@ -952,12 +959,17 @@ a.material-card:hover {
     }
     
     @media only screen and (max-width: $palm-end) {
+      .getting-started-grid {
+        flex-direction: column;
+      }
+
       .getting-started-device {
         padding-bottom: 64px;
       }
 
       #HA_Yellow, #Raspberry_Pi {
         padding-top: 0;
+        order: 2;
       }
     }
   }
