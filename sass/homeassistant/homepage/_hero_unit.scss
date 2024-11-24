@@ -100,7 +100,7 @@
   
   .hero-github-top-project {
     display: flex;
-    padding: 12px 16px 12px 12px;
+    padding: 12px;
     align-items: center;
     gap: 10px;
     border-radius: 12px;
@@ -241,6 +241,9 @@
 
 @media only screen and (max-width: $lap-end) {
   .hero {
+    img {
+      margin-bottom: 0 !important;
+    }
     h1 {
       font-size: 4.5rem;
       letter-spacing: -1.92px;
