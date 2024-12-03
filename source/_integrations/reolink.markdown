@@ -43,22 +43,18 @@ A brand new Reolink camera needs to be connected to the network and initialized.
 - The password used for the Reolink device can only contain characters `a-z, A-Z, 0-9 or @$*~_-+=!?.,:;'()[]`. Other special characters will cause encoding issues in the video streams used by this integration and are, therefore, not allowed. When using an incompatible special character in the password, the integration will prompt you to change the password.
 
 {% include integrations/config_flow.md %}
+
 {% configuration_basic %}
 Host:
-    description: "The hostname or IP address of your Reolink device. For example: '192.168.1.25'. You can find it in your router or in the Reolink app under **Settings** -> **Device** (top icon) -> **Networkinformation** -> **IP-address**. Normally, the Reolink device is automatically discovered, and you do not need to provide this."
-    required: false
-    type: string
+  description: "The hostname or IP address of your Reolink device. For example: '192.168.1.25'. You can find it in your router or in the Reolink app under **Settings** -> **Device** (top icon) -> **Networkinformation** -> **IP-address**. Normally, the Reolink device is automatically discovered, and you do not need to provide this."
 Username:
-    description: "Username to log in to the Reolink device itself. Not the Reolink cloud account."
-    required: true
-    type: string
+  description: "Username to log in to the Reolink device itself. Not the Reolink cloud account."
 Password:
-    description: "Password to log in to the Reolink device itself. Not the Reolink cloud account."
-    required: true
-    type: string
+  description: "Password to log in to the Reolink device itself. Not the Reolink cloud account."
 {% endconfiguration_basic %}
 
 {% include integrations/option_flow.md %}
+
 {% configuration_basic %}
 Protocol:
   description: Switch between <abbr title="real-time streaming protocol">RTSP</abbr>, <abbr title="real-time messaging protocol">RTMP</abbr>, or <abbr title="flash video">FLV</abbr> streaming protocol. <abbr title="real-time streaming protocol">RTSP</abbr> supports 4K streams (h265 encoding) while <abbr title="real-time messaging protocol">RTMP</abbr> and <abbr title="flash video">FLV</abbr> do not. <abbr title="flash video">FLV</abbr> is the least demanding on the camera.
@@ -344,13 +340,15 @@ The following models have been tested and confirmed to work with a direct link t
 
 ### Tested battery-powered models
 
-Battery-powered Reolink cameras can be used with Home Assistant with the help of a [Reolink Home Hub](https://reolink.com/product/reolink-home-hub/) or NVR ([RLN8-410 N7MB01](https://reolink.com/product/rln8-410/)). The Home Hub/NVR will act as a bridge between the battery-powered cameras and Home Assistant, conserving the battery life. All features of the battery-powered cameras will be available just like regular-powered cameras. Viewing the camera stream in Home Assistant will keep the battery camera awake during viewing, consuming battery life. Therefore, ensure you do not use the camera stream on a dashboard that is constantly being viewed, like a wall panel dashboard. You can check proper operation by ensuring that the "Sleep status" entity will go to "Sleeping" if the battery camera is not being actively used.
+Battery-powered Reolink cameras can be used with Home Assistant with the help of a [Reolink Home Hub](https://reolink.com/product/reolink-home-hub/) or NVR. The Home Hub/NVR will act as a bridge between the battery-powered cameras and Home Assistant, conserving the battery life. All features of the battery-powered cameras will be available just like regular-powered cameras. Viewing the camera stream in Home Assistant will keep the battery camera awake during viewing, consuming battery life. Therefore, ensure you do not use the camera stream on a dashboard that is constantly being viewed, like a wall panel dashboard. You can check proper operation by ensuring that the "Sleep status" entity will go to "Sleeping" if the battery camera is not being actively used.
 
 The following hubs/NVRs have been tested and confirmed to work with battery-powered models in Home Assistant:
 
 - [Reolink Home Hub](https://reolink.com/product/reolink-home-hub/)
 - [Reolink Home Hub Pro](https://reolink.com/product/reolink-home-hub-pro/)
 - [RLN8-410 NVR](https://reolink.com/product/rln8-410/) (only the latest hardware version N7MB01, older versions might receive the required firmware update later)
+- [RLN16-410 NVR](https://reolink.com/product/rln16-410/) (only the latest hardware version N6MB01, older versions might receive the required firmware update later)
+- [RLN36 NVR](https://reolink.com/product/rln36/)
 
 The following battery-powered models have been tested and confirmed to work through the Reolink Home Hub/NVR:
 
@@ -455,10 +453,34 @@ Removing a chime from a doorbell can be done by deleting the chime following the
 
 This will also decouple the chime from the doorbell in the Reolink app/client. Therefore, the chime will no longer ring when the doorbell is pressed.
 
-## Showing the camera in the dashboard
+## Examples
 
-1. One way to show the camera in the dashboard is by using the picture glance card.
-2. For example, you can place arrow buttons on the card to [control the camera](/dashboards/picture-glance/#creating-a-card-to-control-the-camera).
+### Showing the camera in the dashboard
+
+One way to show the camera in the dashboard is by using the picture glance card.
+For example, you can place arrow buttons on the card to [control the camera](/dashboards/picture-glance/#creating-a-card-to-control-the-camera).
+
+### Sending rich notifications
+
+You can receive rich notifications on your phone when someone rings a Reolink doorbell or a Reolink camera detects an event like motion or a person.
+
+### Automation ideas
+
+- Turn on (outdoor) lights near the camera to improve image clarity at night once the camera detects a person, vehicle, or animal.
+- Turn off notifications and recording when you get home (based on, e.g., geofencing) and turn it back on when you leave home.
+When someone presses the doorbell, Play ringtones on speakers (Echo Dot/Google Home/smart hubs) throughout the house.
+- Pause a TV and show a notification badge on the TV when the doorbell is pressed (only when the TV is already on).
+- Play the quick replay messages of a Reolink doorbell only when not home (geofencing)
+- Wake up and start recording on other battery cameras nearby if one camera/motion sensor detects an event.
+- Turn on the spotlights or sirens of other cameras nearby when one camera detects a person, vehicle, or animal.
+- If a camera detects a person/vehicle/animal, then point other PTZ cameras in that direction using PTZ presets.
+- Switch day night mode (Color/IR Black&White) based on sunset/sunrise times or the status of (outdoor) lights instead of relying on the internal light sensor.
+- Change the camera volume based on the time and/or when you are home or not (geofencing)
+- Increase the framerate and maximum bitrate of a camera when a person/vehicle/animal is detected and lower them again after 1 minute of no detection. This saves storage space, so you can record longer when recording 24/7 without compromising image clarity during events.
+- Turn on indoor lights close to windows in a sequence with some time delays if a camera detects a person to make it look like someone is home.
+- Show a camera stream on a full screen on a wall panel, tablet, or Google Home display when someone rings the doorbell.
+- Switch HDR mode of the camera based on sunset/sunrise
+- Make an input boolean helper to easily disable notifications on all cameras and automatically enable notifications again after 1 hour.
 
 ## Known limitations
 

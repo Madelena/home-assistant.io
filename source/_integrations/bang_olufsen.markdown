@@ -10,7 +10,7 @@ ha_domain: bang_olufsen
 ha_platforms:
   - media_player
 ha_codeowners:
-  - '@mj23000'
+  - "@mj23000"
 ha_config_flow: true
 ha_zeroconf: true
 ha_integration_type: device
@@ -33,21 +33,20 @@ Devices that have been tested and _should_ work without any trouble are:
 - [Beosound Level](https://www.bang-olufsen.com/en/dk/speakers/beosound-level)
 - [Beosound Theatre](https://www.bang-olufsen.com/en/dk/soundbars/beosound-theatre)
 
-and any other Mozart based products.
+and any other [Mozart](https://support.bang-olufsen.com/hc/en-us/articles/24766979863441-Which-platform-is-my-Connected-Audio-product-based-on) based products. This means all [Connected Speakers](https://www.bang-olufsen.com/en/dk/story/connected-speakers) that have been launched after 2020.
 
 {% include integrations/config_flow.md %}
 
 {% configuration_basic %}
 IP Address:
   description: The IP address of your device. Can be found by navigating to the device on the [Bang & Olufsen app](https://www.bang-olufsen.com/en/dk/story/apps) and selecting `Settings` → `About` → `IP address`.
-  required: true
-  type: string
 Device model:
   description: The model name of your Bang & Olufsen device. This is used to determine some capabilities of the device. If the device is not in the list yet, choose a product similar to yours.
-  required: true
-  type: string
 {% endconfiguration_basic %}
 
+## Data updates
+
+The **Bang & Olufsen** integration uses the [Mozart API](https://bang-olufsen.github.io/mozart-open-api), which is a local REST API with a WebSocket notification channel for immediate state information for media metadata, playback progress, volume etc. The only exception to this is the repeat and shuffle controls which are polled every 30 seconds.
 
 ## Actions
 
@@ -197,7 +196,7 @@ Bang & Olufsen Cloud TTS messages are limited to 100 unique messages a day and a
 
 Extra keys available:
 
-| Data attribute    | Optional | Description                                                                                       |
+| Data attribute            | Optional | Description                                                                                       |
 | ------------------------- | -------- | ------------------------------------------------------------------------------------------------- |
 | `overlay_absolute_volume` | yes      | Specify an absolute volume for the overlay.                                                       |
 | `overlay_offset_volume`   | yes      | Specify a volume offset to be added to the current volume level.                                  |
@@ -234,6 +233,7 @@ data:
 ```
 
 Playing a Bang & Olufsen Cloud TTS message with a local language:
+
 ```yaml
 action: media_player.play_media
 target:
@@ -257,4 +257,11 @@ To find Deezer playlist, album URIs, and user IDs for Deezer flows, the Deezer w
 Additionally a Deezer user ID can be found at <https://www.deezer.com/en/profile/USER_ID> by selecting the active user in a web browser.
 
 ### Getting Tidal URIs
+
 Tidal playlists, album URIs and track IDs are available via the Tidal website. When navigating to an album, the URL will look something like <https://listen.tidal.com/album/ALBUM_ID/>, and this needs to be converted to `album:ALBUM_ID`. The same applies to playlists, which have the format `playlist:PLAYLIST_ID`. Individual tracks can be found by sharing the track and selecting the `Copy track link` method, which should yield a link of the format <https://tidal.com/browse/track/TRACK_ID?u>, this can be played by extracting the track id `TRACK_ID`.
+
+## Removing the integration
+
+This integration follows standard integration removal. No extra steps are required.
+
+{% include integrations/remove_device_service.md %}

@@ -155,6 +155,22 @@ data:
 
 {% endraw %}
 
+It is recommended to select an effect that matches the capabilities of your WLED device (e.g., 1D, 2D, or Sound Reactive). You can refer to the [WLED effect list](https://kno.wled.ge/features/effects/) to explore available options. Once you identify compatible effects, you can randomize them based on their IDs.
+
+Below is an example of how to select a random effect with an ID between 1 and 117, excluding retired effects:
+
+{% raw %}
+
+```yaml
+action: light.turn_on
+target:
+  entity_id: light.wled
+data:
+  effect: "{{ state_attr('light.wled', 'effect_list')[1:118] | reject('equalto', 'RSVD') | list | random }}"
+```
+
+{% endraw %}
+
 ### Activating random palette
 
 Activating a random palette is very similar to the above random effect,
