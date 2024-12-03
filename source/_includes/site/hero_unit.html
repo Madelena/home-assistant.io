@@ -4,7 +4,7 @@
       <div class="hero-welcome grid__item flex__item three-fifths lap-one-whole palm-one-whole">
         {% include custom/welcome.html %}
       </div>
-      <div class="hero-demo grid__item flex__item two-fifths lap-one-whole palm-one-whole" style="text-align: center; perspective: 1000px;">
+      <div class="hero-demo grid__item flex__item two-fifths lap-one-whole palm-one-whole" style="text-align: center;">
         <iframe id="HAdemo" title="Home Assistant Demo"
           src="https://demo.home-assistant.io/?frontpage">
         </iframe>
@@ -13,7 +13,7 @@
           <img src="/images/frontpage/hero_screenshot.png" alt="Home Assistant screenshot">
         </a>
 
-        <script>
+        <!-- <script>
           document.addEventListener('mousemove', (event) => {
             const phone = document.querySelector('#HAdemo');
             const { innerWidth } = window;
@@ -26,7 +26,7 @@
             // Apply rotation
             phone.style.transform = `rotateY(${rotation}deg) skewY(${skew}deg)`;
           });
-        </script>
+        </script> -->
       </div>
     </div>
   </div>
